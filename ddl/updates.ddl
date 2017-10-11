@@ -1,0 +1,1 @@
+insert into hdzie_settings (field, value) values ('main_color', '#4ab350');

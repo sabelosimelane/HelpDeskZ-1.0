@@ -91,6 +91,13 @@ toolbar: "insertfile undo redo | styleselect | bold italic underline | fontsizes
                 <td valign="top" align="left"><input type="text" name="email_ticket" value="{{ settings.email_ticket }}" size="30" />
                 </td>
             </tr>
+            <tr>
+            	<td valign="top">{{ LANG.THEME_COLOR }}<br />
+                <span class="description">{{ LANG.THEME_COLOR_TXT }}</span>
+                </td>
+                <td valign="top" align="left"><input type="text" name="theme_color" value="{{ settings.main_color }}" size="30" />
+                </td>
+            </tr>
         	<tr>
             	<td>{{ LANG.DEFAULT_PAGE_SIZE }}<br />
                 <span class="description">{{ LANG.DEFAULT_PAGE_SIZE_TXT }}</span>

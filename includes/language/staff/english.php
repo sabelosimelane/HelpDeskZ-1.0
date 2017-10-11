@@ -379,4 +379,6 @@ $LANG['USE_SOCIAL_BUTTONS_NEWS'] = 'Use Social buttons on News';
 $LANG['USE_SOCIAL_BUTTONS_NEWS_TXT'] = 'Allow to clients or visitors to share your news article via facebook, twitter or other social page.';
 $LANG['USE_SOCIAL_BUTTONS_KB'] = 'Use Social buttons on Knowledgebase';
 $LANG['USE_SOCIAL_BUTTONS_KB_TXT'] = 'Allow to clients or visitors to share your knowledgebase article via facebook, twitter or other social page.';
+$LANG['THEME_COLOR'] = 'Theme Color';
+$LANG['THEME_COLOR_TXT'] = 'Customize the theme by changing the color.';
 ?>

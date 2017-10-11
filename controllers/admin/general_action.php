@@ -1,4 +1,6 @@
 <?php
+
+require_once ROOTPATH. 'controllers/util/FileUtil.php';
 /**
  * @package HelpDeskZ
  * @website: http://www.helpdeskz.com
@@ -37,6 +39,10 @@ if($params[1] == 'update_helpdesk'){
 		$db->update(TABLE_PREFIX."settings", array('value' => (in_array($input->p['client_language'], $client_languages)?$input->p['client_language']:'english')), "field='client_language'");
 		$db->update(TABLE_PREFIX."settings", array('value' => (in_array($input->p['staff_language'], $staff_languages)?$input->p['staff_language']:'english')), "field='staff_language'");
 		$db->update(TABLE_PREFIX."settings", array('value' => ($input->p['client_multilanguage'] == 1?1:0)), "field='client_multilanguage'");
+		$db->update(TABLE_PREFIX."settings", array('value' => $input->p['theme_color']), "field='main_color'");
+		
+		$fileUtil =  new FileUtil();
+		$fileUtil->writeToFile(THEME_CSS.'theme.css', ':root {--theme-bg-color: '. $input->p['theme_color']. ';}');
 		
 		$settings['permalink'] = ($input->p['permalink'] == 1?1:0);
 		header('location: '.getUrl($controller,$action, array('general','helpdesk_updated')));

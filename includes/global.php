@@ -16,6 +16,7 @@ define('CLIENT_TEMPLATE', TEMPLATES . 'client/');
 define('STAFF_TEMPLATE', TEMPLATES . 'staff/');
 define('ADMIN_TEMPLATE', TEMPLATES . 'admin/');
 define('UPLOAD_DIR', ROOTPATH . 'uploads/');
+define('THEME_CSS', ROOTPATH . 'css/');
 
 require_once INCLUDES.'classes/classRegistry.php';
 require_once INCLUDES.'classes/classInput.php';

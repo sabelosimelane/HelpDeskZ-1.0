@@ -1,3 +1,5 @@
+@import url("theme.css");
+
 body {
 background:#ecedef;
 font-family:arial,helvetica,sans-serif;
@@ -27,7 +29,7 @@ line-height:25px;
 }
 #header{
 background: #fff;
-border-top:5px solid #4ab350;
+border-top: 5px solid var(--theme-bg-color);
 }
 #logo{
 	background:url(../images/cp/cp_logo.png) no-repeat;
@@ -62,12 +64,12 @@ border-top:5px solid #4ab350;
 	background:#707070;	
 }
 #navbar div.current span, #navbar div.current span:hover{
-	background:#4ab350;
+	background: var(--theme-bg-color);
 	color:#fff;	
 }
 
 #submenu{
-	background:#4ab350;
+	background: var(--theme-bg-color);
 	
 }
 #submenu ul{

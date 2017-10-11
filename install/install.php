@@ -237,6 +237,7 @@ function helpdeskz_getQuery($db_prefix, $admin_user, $admin_password){
 	$query[] = "INSERT INTO `".$db_prefix."settings` (`field`, `value`) VALUES
 ('use_captcha', '1'),
 ('email_ticket', 'support@mysite.com'),
+('main_color', '#4ab350'),
 ('site_name', 'HelpDeskz Support Center'),
 ('site_url', 'http://".str_replace("/install/install.php", "",$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'])."'),
 ('windows_title', 'HelpDeskZ Support Center'),
