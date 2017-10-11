@@ -19,8 +19,8 @@
             <li><a href="{{ settings.site_url }}" {% if controller == 'home' or controller == 'login' %}class="current"{% endif %}>{{ LANG.HOME }}</a></li>
             {% if client_status == 1 %}
             <li><a href="{{ getUrl('view_tickets') }}" {% if controller == 'view_tickets' %}class="current"{% endif %}>{{ LANG.MY_TICKETS }}</a></li>
-            {% endif %}
             <li><a href="{{ getUrl('submit_ticket') }}" {% if controller == 'submit_ticket' %}class="current"{% endif %}>{{ LANG.SUBMIT_A_TICKET }}</a></li>
+            {% endif %}
             {% if settings.knowledgebase == 'yes' %}
             <li><a href="{{ getUrl('knowledgebase') }}" {% if controller == 'knowledgebase' %}class="current"{% endif %}>{{ LANG.KNOWLEDGEBASE }}</a></li>
             {% endif %}
