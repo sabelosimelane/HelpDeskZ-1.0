@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="TheBuild"  basedir="." default="tarUp">
+
+	<property file="build.properties" />
+	<property file="build/build.version" />
+
+	<target name="createDir">
+		<mkdir dir="${temp-dir}"/>
+	</target>
+
+	<target name="deletefiles" depends="createDir">
+		<echo>Deleting files</echo>
+		<delete includeemptydirs="true" verbose="true" failonerror="true" >
+			<fileset dir="${temp-dir}" includes="**/*"/>
+		</delete>
+	</target>
+
+	<target name="copyclasses" description="Copy Classes" depends="deletefiles">
+		<echo>Copying classes...${web-dir}</echo>
+		<copy todir="${temp-dir}" verbose="true">
+			<fileset dir="." includes="**">
+				<exclude name="**/images/**"/>
+				<exclude name="**/includes/config.php"/>
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="increment_teh_build_number" depends="copyclasses">
+			<propertyfile file="build/build.version" comment="Build Number for ANT. Edit not!">
+				<entry key="build.number" type="int" operation="+" default="1" />
+			</propertyfile>
+			<copy todir="build" verbose="true">
+				<fileset dir="." includes="build.version">
+				</fileset>
+			</copy>
+
+			<property name="app.version" value="${version.number}.${build.number}" />
+			<echo>Build successful -> Build ${app.version} </echo>
+		</target>
+
+	<target name="tarUp" depends="increment_teh_build_number">
+
+		<echo>creating tar file...${temp-dir}/${tar-name}.tar</echo>
+		<tar destfile="${temp-dir}/${app-name}-ver_${app.version}.tar" basedir="${temp-dir}"/>
+	</target>
+
+	
+	<!-- To upper case -->
+	  <scriptdef language="javascript" name="upper">
+	    <attribute name="string" /> 
+	    <attribute name="to" />
+	    project.setProperty(attributes.get("to"),attributes.get("string").toUpperCase());
+	  </scriptdef>
+	 
+	  <!-- To lower case -->
+	  <scriptdef language="javascript" name="lower">
+	    <attribute name="string" /> 
+	    <attribute name="to" />
+	    project.setProperty(attributes.get("to"),attributes.get("string").toLowerCase());
+	  </scriptdef>
+</project>
